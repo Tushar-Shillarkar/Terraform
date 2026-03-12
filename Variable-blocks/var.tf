@@ -16,9 +16,9 @@ variable "countno" {
   default = 3
 }
 
-/*variable "disable_api_termination" {
+variable "disable_api_termination" {
   default = false
-}*/
+}
 
 variable "sgid" {
   default = "sg-03005c7d8e2786c05"

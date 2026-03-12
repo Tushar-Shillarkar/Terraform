@@ -23,7 +23,7 @@ resource "aws_instance" "webserver" {
   ami                     = var.amiid
   instance_type           = var.instancetype
   key_name                = var.keyname
-  #disable_api_termination = var.disable_api_termination
+  disable_api_termination = var.disable_api_termination
 
   tags = {
     Name       = "webserver"

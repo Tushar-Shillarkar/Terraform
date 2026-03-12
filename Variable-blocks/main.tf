@@ -21,7 +21,7 @@ resource "aws_security_group" "webserversg" {
 
 resource "aws_instance" "webserver" {
   count                   = var.countno
-  ami                     = data.aws_ami.amazon_linux.id
+  ami                     = var.amiid
   instance_type           = var.instancetype
   key_name                = var.keyname
   disable_api_termination = var.disable_api_termination

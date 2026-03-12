@@ -12,9 +12,9 @@ variable "keyname" {
   default     = ""
 }
 
-variable "countno" {
+/*variable "countno" {
   default = 3
-}
+}*/
 
 variable "disable_api_termination" {
   default = false

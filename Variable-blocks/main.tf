@@ -19,7 +19,7 @@ resource "aws_security_group" "webserversg" {
 }
 #instance
 resource "aws_instance" "webserver" {
-  count                   = var.countno
+#count                   = var.countno
   ami                     = var.amiid
   instance_type           = var.instancetype
   key_name                = var.keyname

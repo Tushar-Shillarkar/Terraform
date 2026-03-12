@@ -25,6 +25,7 @@ resource "aws_instance" "webserver" {
   instance_type           = var.instancetype
   key_name                = var.keyname
   disable_api_termination = var.disable_api_termination
+  vpc_security_group_ids  = [aws_security_group.webserversg.id]
   
 
   tags = {

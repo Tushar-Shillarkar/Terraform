@@ -19,7 +19,7 @@ resource "aws_security_group" "webserversg" {
 }
 #instance
 resource "aws_instance" "webserver" {
-#count                   = var.countno
+  count                   = var.countno
   ami                     = var.amiid
   instance_type           = var.instancetype
   key_name                = var.keyname
@@ -30,13 +30,13 @@ resource "aws_instance" "webserver" {
   }
 }
 #OutPut
-output "instance_pub_id"{
+/*output "instance_pub_id"{
   value = aws_instance.webserver.public_ip
 }
 
 output "instance_pvt_id"{
   value = aws_instance.webserver.public_ip
-}
+}*/
 
 
 

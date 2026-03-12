@@ -17,8 +17,7 @@ resource "aws_security_group" "webserversg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-
+#instance
 resource "aws_instance" "webserver" {
   count                   = var.countno
   ami                     = var.amiid
@@ -26,10 +25,18 @@ resource "aws_instance" "webserver" {
   key_name                = var.keyname
   disable_api_termination = var.disable_api_termination
 
-  
-
   tags = {
     Name       = "webserver"
   }
 }
+#OutPut
+output "instance_pub_id"{
+  value = aws_instance.webserver.public_ip
+}
+
+output "instance_pvt_id"{
+  value = aws_instance.webserver.public_ip
+}
+
+
 

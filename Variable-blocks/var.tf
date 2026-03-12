@@ -17,7 +17,7 @@ variable "countno" {
 }
 
 variable "disable_api_termination" {
-  default = true
+  default = false
 }
 
 variable "sgid" {

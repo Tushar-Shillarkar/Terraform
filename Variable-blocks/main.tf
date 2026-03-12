@@ -1,17 +1,13 @@
-# EC2 Instance
 resource "aws_instance" "webserver" {
   count                   = var.countno
-  ami                     = var.amiid
+  ami                     = data.aws_ami.amazon_linux.id
   instance_type           = var.instancetype
   key_name                = var.keyname
   disable_api_termination = var.disable_api_termination
-
-
+  vpc_security_group_ids  = [aws_security_group.webserversg.id]
 
   tags = {
-    Name       = "webserver-${count.index}"
-    department = "hr"
-    purpose    = "practice"
+    Name       = "webserver"
   }
 }
 

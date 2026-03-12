@@ -1,16 +1,3 @@
-resource "aws_instance" "webserver" {
-  count                   = var.countno
-  ami                     = data.aws_ami.amazon_linux.id
-  instance_type           = var.instancetype
-  key_name                = var.keyname
-  disable_api_termination = var.disable_api_termination
-  vpc_security_group_ids  = [aws_security_group.webserversg.id]
-
-  tags = {
-    Name       = "webserver"
-  }
-}
-
 # Security Group
 resource "aws_security_group" "webserversg" {
   name        = "webserver-sg"
@@ -30,3 +17,18 @@ resource "aws_security_group" "webserversg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+
+resource "aws_instance" "webserver" {
+  count                   = var.countno
+  ami                     = data.aws_ami.amazon_linux.id
+  instance_type           = var.instancetype
+  key_name                = var.keyname
+  disable_api_termination = var.disable_api_termination
+  
+
+  tags = {
+    Name       = "webserver"
+  }
+}
+

@@ -1,16 +1,25 @@
-variable "instance_type" {
+variable "instancetype" {
   default = "t3.micro"
 }
 
-
 variable "amiid" {
-  default = "ami-0ac4101c751eae35f"
+  description = "AMI ID"
+  default     = "ami-0aaa636894689fa47"
 }
 
 variable "keyname" {
-  default = "singapore"
+  description = "EC2 key pair"
+  default     = ""
 }
 
-variable "counts" {
-  default = 3 
+variable "countno" {
+  default = 3
+}
+
+variable "disable_api_termination" {
+  default = true
+}
+
+variable "sgid" {
+  default = "sg-03005c7d8e2786c05"
 }

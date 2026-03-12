@@ -13,7 +13,7 @@ variable "keyname" {
 }
 
 variable "countno" {
-  default = 2
+  default = 3
 }
 
 variable "disable_api_termination" {

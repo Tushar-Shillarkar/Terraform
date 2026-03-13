@@ -1,8 +1,8 @@
-
-# Security Group
+# Security Groups
 resource "aws_security_group" "webserversg" {
   name        = "webserver-sg"
   description = "Allow HTTP and outbound traffic"
+  vpc_id      = var.vpc_id
 
   ingress {
     from_port   = 80
@@ -25,24 +25,14 @@ resource "aws_instance" "webserver" {
   instance_type           = var.instancetype
   key_name                = var.keyname
   disable_api_termination = var.disable_api_termination
-  vpc_security_group_ids  = [data.aws_security_group.webserversg.id]
+  subnet_id = var.subnet_id
+  vpc_security_group_ids  = [aws_security_group.webserversg.id]
 
   tags = {
     Name       = "webserver"
   }
 }
-#OutPut-Block
-output "instance_pub_id"{
-  value = aws_instance.webserver.public_ip
-}
 
-output "instance_pvt_id"{
-  value = aws_instance.webserver.private_ip
-}
-#data-block
-data "aws_security_group" "webserversg"{
-  name = "mysg"
-}
 
 
 

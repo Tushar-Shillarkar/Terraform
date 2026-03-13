@@ -1,13 +1,8 @@
-
-#OutPut-Block
-output "instance_pub_id"{
-  value = aws_instance.webserver.public_ip
+#OutPut-Blocks
+output "vpc_id"{
+  value = aws_vpc.webserver_vpc.id
 }
 
-output "instance_pvt_id"{
-  value = aws_instance.webserver.private_ip
-}
-#data-block
-data "aws_security_group" "webserversg"{
-  name = "mysg"
+output "Subnet_id"{
+  value = aws_subnet.webserver_subnet.id
 }

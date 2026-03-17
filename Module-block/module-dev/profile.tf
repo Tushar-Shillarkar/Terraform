@@ -1,6 +1,4 @@
 provider "aws" {
-  region     = "ap-south-1"
-  access_key = ""
-  secret_key = ""
+ #paste your credentials in terminal by using "aws configure"
 }
 

@@ -5,7 +5,7 @@ variable "this_list" {
 variable "this_map" {
     default = {
         amiws = "ami-0f559c3642608c138" ,
-    keynamews = "mum-key"  }  
+    keynamews = "mum-key"  }
 }
 
 
@@ -20,8 +20,8 @@ variable "this_any" {
         }
         wscountlist = [1 , 2 , 3]
       wskeymaps = {
-        kp1 = "ohiokey"
-        kp2 = "vpc"
+        kp1 = "mum-key"
+        kp2 = "mumbai"
       }
 
     }

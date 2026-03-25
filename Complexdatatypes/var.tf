@@ -5,7 +5,7 @@ variable "this_list" {
 variable "this_map" {
     default = {
         amiws = "ami-0f559c3642608c138" ,
-    }   keynamews = "mum-key"
+    keynamews = "mum-key"  }  
 }
 
 

@@ -14,7 +14,7 @@ variable "this_any" {
         wscount =2
         wsinsatncetype = ["t3.micro" "t3.small" "c7i-flex.large"]
         amiws = {
-            ami1ws = "ami-05d2d839d4f73aafb",
+            ami1ws = "ami-05d2d839d4f73aafb"
             ami2ws = "ami-0f559c3642608c138"
 
         }
